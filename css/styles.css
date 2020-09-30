@@ -6,11 +6,17 @@ body {
 	font-weight: 300;
 }
 
-img{
+img {
 	display: block;
 	max-width: 100%;
 }
 
+.image-full{
+	width: 100%;
+	max-height: 250px;
+	object-fit: cover;
+	margin-bottom: 2em;
+}
 
 
 /*==================*/
@@ -21,7 +27,7 @@ h1,
 h2, 
 h3 {
 	font-family: 'lora', serif;
-	font-weight: 400;
+	font-weight: 300;
 	color: #143774;
 	margin-top: 0;
 }
@@ -56,23 +62,24 @@ strong {
 	font-size: 1.5rem;
 }
 
-.article-read-more, 
-.article-info {
-	font-size: 0.875rem;
-}
-
+.article-info,
 .article-read-more {
-	color: #1792D2;
-	text-decoration: none;
-	text-transform: uppercase;
+	font-size: 0.875rem;
 }
 
 .article-info {
 	margin: 2em 0;
 }
 
+.article-read-more {
+	color: #1792D2;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
 .article-read-more:hover, 
-.article-read-more:focus{
+.article-read-more:focus {
 	color: #143774;
 	text-decoration: underline;
 }
@@ -83,7 +90,7 @@ strong {
 	font-size: 1rem;
 }
 
-.widget-title{
+.widget-title {
 	font-family: 'ubuntu', sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -106,6 +113,12 @@ strong {
 	flex-direction: column;
 }
 
+header {
+	text-align: center;
+	background: #f8f8f8;
+	padding: 2em 0;
+	margin-bottom: 3em;
+}
 
 footer {
 	background: #143774;
@@ -119,12 +132,6 @@ footer {
 /*NAV*/
 /*==================*/
 
-header {
-	text-align: center;
-	background: #f8f8f8;
-	padding: 2em 0;
-	margin-bottom: 3em;
-}
 
 nav ul {
 	/*border: 1px solid magenta;*/
@@ -165,11 +172,22 @@ nav a:focus {
 /*ARTICLES*/
 /*==================*/
 
-.article-featured {
+.article-featured, 
+.article-about {
+	display: flex;
+	flex-direction: column;
 	border-bottom: 1px solid #707070;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
+	padding-bottom: 2em;
+	margin-bottom: 2em;
 	/*background: pink;*/
+}
+
+.article-image {
+	order: -2;
+}
+
+.article-info {
+	order: -1;
 }
 
 .article-recent {
@@ -221,7 +239,7 @@ nav a:focus {
 /*==================*/
 
 
-@media (min-width: 675px){
+@media (min-width: 675px) {
 	
 	.container-flex {
 		flex-direction: row;
@@ -245,6 +263,22 @@ nav a:focus {
 		margin-left: 1em;
 	}
 
+	/*.article-featured {
+		display: flex;
+		flex-direction: column;
+	}*/
+
+	.article-image {
+		width: 100%;
+		min-height: 200px;
+		object-fit: cover;
+		/*order: -2;*/
+	}
+
+	/*.article-info {
+		order: -1;
+	}*/
+
 	.article-recent {
 		flex-direction: row;
 		justify-content: space-between;
@@ -258,21 +292,9 @@ nav a:focus {
 		width: 30%;
 	}
 
-	.article-image {
-		width: 100%;
-		min-height: 200px;
-		object-fit: cover;
-		order: -2;
-	}
+	
 
-	.article-featured{
-		display: flex;
-		flex-direction: column;
-	}
-
-	.article-info {
-		order: -1;
-	}
+	
 
 	
 
